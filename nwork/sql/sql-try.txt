@@ -37,7 +37,7 @@ __________________________________
 -- 4 --
 Заполнить таблицу list данными
 -----------------------------
-INSERT INTO list
+INSERT INTO users_list
 VALUES
 (1, 'Nico', '33', 'n.work1100@gmail.com', 'asd456'),
 (2, 'Olia', '35', 'o.work1100@gmail.com', 'asd6545465'),

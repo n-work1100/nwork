@@ -1,0 +1,16 @@
+04:30 = Up, water, wash fase, toilet, dress
+04:40 = Tea
+04:50 = Out
+05:00 = Warm-up, stretching
+05:40 = Shower
+06:10 = Out
+07:15 = Breakfast, coffee
+07:30 = Job
+10:45 = Snack
+12:00 = Lunch
+17:30 = Out
+18:15 = Dinner
+18:30 = Sport
+19:00 = Repeat | Study
+21:30 = Lights out
+
