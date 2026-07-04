@@ -80,9 +80,15 @@ Cisco Certified Network Associate
 (мікропраграмне забезпечення)
 Операційна система на домашніх маршрутизаторах
 
+--SVI--
+Switch Vitrual Interface
+
 ----
+
+
 ----
-----
+
+
 ----
 ----
 ----
