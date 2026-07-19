@@ -1,3 +1,14 @@
+--OSI--
+Open Systems Interconnection
+
+--RFC--
+Request for Comments
+Описання протоколу IP(Internet Protocol)
+
+--TCP--
+Transmission Control Protocol
+Протокол передачі даних
+
 --LAN--
 Local Area Network
 Локальна комп'ютерна мережа
@@ -11,12 +22,15 @@ Wide Area Network
 Глобальна комп'ютерна мережа
 
 --IETF--
-Internet Task Force
+Internet Engineering Task Force
+Інженерна робоча група що підтримує работу протоколів TCP/IP
+
 --ICANN--
 Internet Corporation for Names and Numbers
+
 --IAB--
 Internet Architecture
-Організації, створені для підтримки структури та стандартизації шнтернет протоколів і процесів
+Організації, створені для підтримки структури та стандартизації интернет протоколів і процесів
 
 --DSL--
 Digital Subscriber Line
