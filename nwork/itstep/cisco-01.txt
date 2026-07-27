@@ -97,8 +97,9 @@ Cisco Certified Network Associate
 --SVI--
 Switch Vitrual Interface
 
-----
-
+--STP--
+Spanning Tree Protocol
+Протокол основного дерева
 
 ----
 
