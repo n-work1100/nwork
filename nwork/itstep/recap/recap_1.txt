@@ -1,3 +1,17 @@
+vlan 10 (Students)
+vlan 20 (Users)
+vlan 30 (Office)
+vlan 40 (Accounting)
+vlan 50 (Guest)
+vlan 99 (Admin)
+vlan 150 (Voice)
+
+Permission required
+←Access external directory D:\opencode\.opencode\commands
+
+В игре на этом ПК 'Кормары - Проклятые Судьбой' есть крысы которые переодически пожирают товары на корабле. Нужно их убрать. Ты посоветовал в одной из преведущих сессий (которую ты не помнишь) задать вопрос на xgm.guru, вопрос такой: 
+
+
 --0.1--
 рівні моделі osi
 __________________________________________________________________________
