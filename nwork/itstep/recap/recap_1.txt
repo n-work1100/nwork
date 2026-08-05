@@ -6,11 +6,6 @@ vlan 50 (Guest)
 vlan 99 (Admin)
 vlan 150 (Voice)
 
-Permission required
-←Access external directory D:\opencode\.opencode\commands
-
-В игре на этом ПК 'Кормары - Проклятые Судьбой' есть крысы которые переодически пожирают товары на корабле. Нужно их убрать. Ты посоветовал в одной из преведущих сессий (которую ты не помнишь) задать вопрос на xgm.guru, вопрос такой: 
-
 
 --0.1--
 рівні моделі osi
@@ -168,6 +163,7 @@ __________________________________________________________________________
 --8--
 Дата IP для інтерфейса gigabitEthernet 0/0
 __________________________________________________________________________
+R1(config)# interface gigabitEthernet 0/0
 R1(config-if)# ip add 10.10.10.254 255.255.255.0
 __________________________________________________________________________
 
@@ -212,7 +208,7 @@ __________________________________________________________________________
 
 --14--
 Поставити пароль '1100' на VTY(віддалене з'єднання)
-_____________________________________
+__________________________________________________________________________
 R1(config)# line vty 0 15
 R1(config-line)# password 1100
 R1(config-line)# login
@@ -300,7 +296,7 @@ __________________________________________________________________________
 
 
 --26--
-Налаштувати VLAN для intукафсу f0/4
+Налаштувати VLAN для інтерфейсу f0/4
 __________________________________________________________________________
 S1(config)#int f0/4
 S1(config-if)#switchport mode access 
@@ -310,10 +306,10 @@ __________________________________________________________________________
 
 --27--
 Зробити порт транковим(магістральним)
-Дати дозвіл на проходження всім VLAN(тільки VLAN 10)
+Дати дозвіл на проходження всім VLAN
 __________________________________________________________________________
 S4(config-if)# switchport mode trunk
-S4(config-if)# switchport mode trunk allowed vlan all (10 замість all)
+S4(config-if)# switchport mode trunk allowed vlan all
 S4(config-if)# no shutdown
 __________________________________________________________________________
 
@@ -384,16 +380,56 @@ ssh -l admin 99.99.99.2
 __________________________________________________________________________
 
 
---0--
+--34--
+SSH
+__________________________________________________________________________
+1) Management IP на S4 в VLAN 99:
+   S4(config)# vlan 99
+   S4(config-vlan)# name Admin
+   S4(config-vlan)# exit
+   S4(config)# interface vlan 99
+   S4(config-if)# ip address 99.99.99.2 255.255.255.0
+   S4(config-if)# no shutdown
+   S4(config-if)# exit
+   S4(config)# ip default-gateway 99.99.99.254
 
+2) SSH на S4:
+   S4(config)# ip domain-name admin.local
+   S4(config)# crypto key generate rsa (1024)
+   S4(config)# username admin privilege 15 secret 1100
+   S4(config)# ip ssh version 2
+   S4(config)# line vty 0 4
+   S4(config-line)# transport input ssh
+   S4(config-line)# login local
+   S4(config)# end
+   S4# copy running-config startup-config
 __________________________________________________________________________
 
-__________________________________________________________________________
 
+--35--
+VLAN 99 ping только 30, 40, 50
+_______________________________________________________________
 
---0--
+R2(config)# access-list 100 permit icmp host 99.99.99.1 host 30.30.30.1 echo
+R2(config)# access-list 100 permit icmp host 99.99.99.1 host 30.30.30.2 echo
+R2(config)# access-list 100 permit icmp host 99.99.99.1 host 40.40.40.1 echo
+R2(config)# access-list 100 permit icmp host 99.99.99.1 host 50.50.50.1 echo
+R2(config)# access-list 100 deny ip any any log
 
-__________________________________________________________________________
+R2(config)# interface GigabitEthernet2/0.99
+R2(config-if)# ip access-group 100 in
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+/////////////////////////////////////////////////////////////////////////
+
+R2(config)# access-list 101 permit icmp host 20.20.20.20 host 30.30.30.30 echo
+R2(config)# access-list 101 deny icmp host 20.20.20.20 host 10.10.10.10 echo
+R2(config)# access-list 101 permit ip any any
+R2(config)# interface GigabitEthernet1/0.20
+R2(config-subif)# ip access-group 101 in
+R2(config-subif)# end
+R2# copy running-config startup-config
+___________
 
 __________________________________________________________________________
 
