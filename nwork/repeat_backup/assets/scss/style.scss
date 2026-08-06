@@ -88,80 +88,19 @@
 				color: #fff;
 				background-color: #505050;
 				cursor: pointer;
-				transition: all 0.3s ease;
 			}
 			button.btn-new-question:hover {
 				color: #000;
 				background-color: #fff;
-				outline: 1px solid #000;
+				border: 1px solid #000;
 				cursor: pointer;
 			}
-			button.btn-edit {
-				display: block;
-				border: none;
-				padding: 10px 30px;
-				font-size: 20px;
-				margin: 0 auto;
-				border-radius: 12px;
-				margin-bottom: 30px;
-				color: #fff;
-				background-color: #505050;
-				cursor: pointer;
-				transition: all 0.3s ease;
-			}
-			button.btn-edit:hover {
-				color: #000;
-				background-color: #fff;
-				outline: 1px solid #000;
-				cursor: pointer;
-			}
-			button.btn-delete {
-				display: block;
-				border: none;
-				padding: 10px 30px;
-				font-size: 28px;
-				margin: 0 auto;
-				border-radius: 12px;
-				margin-bottom: 30px;
-				color: #fff;
-				background-color: #505050;
-				cursor: pointer;
-				transition: all 0.3s ease;
-			}
-			button.btn-delete:hover {
-				color: #000;
-				background-color: #fff;
-				outline: 1px solid #000;
-				cursor: pointer;
-			}
-			.edit-delete {
-				display: block;
-				width: 300px;
-    			margin: 0 auto;
-				text-align: center;
-				.title-edit {
-					display: block;
-					margin-bottom: 10px;
-				}
-				.title-delete {
-					display: block;
-					margin-bottom: 10px;
-				}
-			}
-
 			form.form-input {
 				display: none;
 				justify-content: space-around;
 				margin-bottom: 120px;
 				width: 100%;
 				height: 100%;
-				opacity: 0;
-				visibility: hidden;
-				transition: opacity 0.3s ease;
-				&.is-visible {
-					opacity: 1;
-					visibility: visible;
-				}
 				.form-input__text {
 					width: 420px;
 					height: 150px;
@@ -183,54 +122,23 @@
 					}
 				}
 			}
-			.btns-create-exit {
+			.btn-new-create {
 				display: none;
-				text-align: center;
-				opacity: 0;
-				visibility: hidden;
-				transition: opacity 0.3s ease;
-				&.is-visible {
-					opacity: 1;
-					visibility: visible;
-				}
-				.btn-new-create {
-				display: block;
 				border: none;
-				padding: 10px 50px;
-				font-size: 22px;
-				border-radius: 12px;
+				padding: 20px 90px;
+				font-size: 28px;
 				margin: 0 auto;
-				margin-bottom: 15px;
+				border-radius: 12px;
+				margin-bottom: 30px;
 				color: #fff;
 				background-color: #505050;
 				cursor: pointer;
-				transition: all 0.3s ease;
 			}
-				.btn-new-create:hover {
-					color: #000;
-					background-color: #fff;
-					outline: 1px solid #000;
-					cursor: pointer;
-				}
-				.btn-new-exit {
-					display: block;
-					border: none;
-					padding: 10px 50px;
-					font-size: 22px;
-					border-radius: 12px;
-					margin: 0 auto;
-					margin-bottom: 30px;
-					color: #fff;
-					background-color: #505050;
-					cursor: pointer;
-					transition: all 0.3s ease;
-				}
-				.btn-new-exit:hover {
-					color: #000;
-					background-color: #fff;
-					outline: 1px solid #000;
-					cursor: pointer;
-				}
+			.btn-new-create:hover {
+				color: #000;
+				background-color: #fff;
+				border: 1px solid #000;
+				cursor: pointer;
 			}
 		}
 		.footer {

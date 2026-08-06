@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<title>Repeat English</title>
+	<title>Repeat Python</title>
 </head>
 <body>
 
 	<div class="wrapp">
 		<div class="container">
 			<header class="header">
-				repeat english
+				repeat python
 			</header>
 
 			<nav class="menu">
@@ -26,52 +26,57 @@
 			</nav>
 
 			<main class="content">
+				<div class="content__item q-1">
+					<div class="content-question item">
+						<span class="q-num">Question 1 of n</span>
+						<div class="question-text">
+							Зробити порт транковим(магістральним)
+							Дати дозвіл на проходження всім VLAN
+						</div>
+
+						<div class="buttons">
+							<button class="btn-previous">
+								<<<
+							</button>
+							<button class="btn-next">
+								>>>
+							</button>
+						</div>
+					</div>
+
+					<div class="content-answer item">
+						<span class="a-num">Answer 1 of n</span>
+						<div class="answer-text">
+							S4(config-if)# switchport mode trunk<br>
+							S4(config-if)# switchport mode trunk allowed vlan all<br>
+							S4(config-if)# no shutdown
+						</div>
+
+						<button class="btn-show-hide">
+							Show / Hide
+						</button>
+					</div>
+				</div>
 
 				<button class="btn-new-question">
 					New Question
 				</button>
 
-				<button class="btn-edit">
-					Edit
-				</button>
-
-				<button class="btn-delete">
-					Delete
-				</button>
-
-				<div class="block-delete">
-					<select name="number-to-delete">
-						<option value="1"></option>
-					</select>
-				</div>
-
-				<div class="block-edit">
-					<select name="number-to-delete">
-						<option value="1"></option>
-					</select>
-				</div>
-
 				<form action="#" class="form-input">
 					<div class="form-input__text">
-						<span class="new-q-num">New question #</span>
+						<span class="new-q-num">New question #2</span>
 						<textarea name="" id="" class="input-q"></textarea>
 					</div>
 
 					<div class="form-input__text">
-						<span class="new-a-num">Answer to #</span>
+						<span class="new-a-num">Answer to #2</span>
 						<textarea name="" id="" class="input-a"></textarea>
 					</div>
 				</form>
 
-				<div class="btns-create-exit">
-					<button class="btn-new-create">
-						Create
-					</button>
-					
-					<button class="btn-new-exit">
-						Exit
-					</button>
-				</div>
+				<button class="btn-new-create">
+					Create
+				</button>
 			</main>
 
 			<footer class="footer">
@@ -79,8 +84,6 @@
 			</footer>
 		</div>
 	</div>
-
-	<script src="assets/js/script.js"></script>
 	
 </body>
 </html>
