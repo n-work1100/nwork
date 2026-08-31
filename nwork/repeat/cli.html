@@ -27,37 +27,58 @@
 
 			<main class="content">
 
-				
+				<div class="content__item q-1" data-num="1">
+					<div class="content-question item">
+						<span class="q-num">Question 1 of 1</span>
+						<div class="question-text">Зайти в привілейований режим</div>
+						<div class="buttons">
+							<button class="btn-previous"><<<</button>
+							<button class="btn-next">>>></button>
+						</div>
+					</div>
+					<div class="content-answer item">
+						<span class="a-num">Answer 1 of 1</span>
+						<div class="answer-text" style="visibility: hidden;">R1&gt; enable</div>
+						<button class="btn-show-hide">Show / Hide</button>
+					</div>
+				</div>
 
-				<button class="btn-new-question">
-					New Question
-				</button>
+				<div class="main-buttons">
+					<button class="btn-new-question">
+						New Question
+					</button>
 
-				<button class="btn-edit">
-					Edit
-				</button>
+					<button class="btn-edit">
+						Edit
+					</button>
 
-				<button class="btn-delete">
-					Delete
-				</button>
+					<button class="btn-delete">
+						Delete
+					</button>
+				</div>
 
 				<div class="edit-delete">
 					<span class="title-edit">Select number to edit</span>
 					<span class="title-delete">Select number to delete</span>
-					<select name="number-to-delete">
+					<select name="count" size="1" class="number-to-edit-delete">
 						<option value="1"></option>
 					</select>
+					
+					<div class="btn-cancel-delete">
+						<button class="btn-cancel">Cancel</button>
+						<button class="btn-confirm">Confirm</button>
+					</div>
 				</div>
 
 				<form action="#" class="form-input">
 					<div class="form-input__text">
 						<span class="new-q-num">New question #</span>
-						<textarea name="new-q" id="new-q-id" class="input-q"></textarea>
+						<textarea name="new-q" id="new-q-id" class="input-q" spellcheck="true"></textarea>
 					</div>
 
 					<div class="form-input__text">
 						<span class="new-a-num">Answer to #</span>
-						<textarea name="new-a" id="new-a-id" class="input-a"></textarea>
+						<textarea name="new-a" id="new-a-id" class="input-a" spellcheck="true"></textarea>
 					</div>
 				</form>
 

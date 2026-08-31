@@ -132,6 +132,53 @@ const server = http.createServer(async (req, res) => {
 			}
 		}
 
+		if (pathname === '/api/questions' && req.method === 'PUT') {
+			try {
+				const body = JSON.parse(await readBody(req));
+				const page = url.searchParams.get('page') || '';
+				const qNum = parseInt(url.searchParams.get('q_num'), 10);
+				const question = String(body.question || '').trim();
+				const answer = String(body.answer || '').trim();
+				if (!page || !qNum || !question || !answer) {
+					return sendJson(res, 400, {
+						error: 'page, q_num, question, answer are required'
+					});
+				}
+				const info = db
+					.prepare(
+						'UPDATE questions SET question = ?, answer = ? WHERE page = ? AND q_num = ?'
+					)
+					.run(question, answer, page, qNum);
+				if (info.changes === 0) {
+					return sendJson(res, 404, { error: 'not found' });
+				}
+				const row = db
+					.prepare(
+						'SELECT id, page, q_num, question, answer FROM questions WHERE page = ? AND q_num = ?'
+					)
+					.get(page, qNum);
+				return sendJson(res, 200, row);
+			} catch (err) {
+				return sendJson(res, 400, { error: 'invalid body' });
+			}
+		}
+
+		if (pathname === '/api/questions' && req.method === 'DELETE') {
+			const page = url.searchParams.get('page') || '';
+			const qNum = parseInt(url.searchParams.get('q_num'), 10);
+			if (!page || !qNum) return sendJson(res, 400, { error: 'bad params' });
+			db.prepare('DELETE FROM questions WHERE page = ? AND q_num = ?').run(
+				page,
+				qNum
+			);
+			const rows = db
+				.prepare('SELECT id FROM questions WHERE page = ? ORDER BY q_num')
+				.all(page);
+			const reindex = db.prepare('UPDATE questions SET q_num = ? WHERE id = ?');
+			rows.forEach((row, i) => reindex.run(i + 1, row.id));
+			return sendJson(res, 200, { ok: true });
+		}
+
 		if (pathname.startsWith('/api/questions/') && req.method === 'DELETE') {
 			const id = parseInt(pathname.split('/').pop(), 10);
 			if (!id) return sendJson(res, 400, { error: 'bad id' });

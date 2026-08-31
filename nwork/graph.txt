@@ -1,36 +1,39 @@
-04:30 = Up, water, wash fase, toilet, dress
-04:40 = Tea
-04:50 = Out
-05:00 = Warm-up, stretching
-05:40 = Shower
-06:10 = Out
-07:15 = Breakfast, coffee
-07:30 = Job
-10:45 = Snack
-12:00 = Lunch
-17:30 = Out
-18:15 = Dinner
-20:30 = Sport
-19:00 = Repeat | Study
-21:30 = Lights out
+
+05:00 = Up, water, wash fase, toilet, dress
+05:10 = Warm-up, stretching
+05:50 = Out
+06:30 = End
+06:40 = Shower
+07:00 = Breakfast
+08:00 = Repeat
+10:30 = Sport
+11:10 = Shawer, nuts, plums
+11:30 = New info
+13:30 = Do eat
+14:00 = Eat
+14:30 = New info
+16:45 = Artur
+17:10 = Do dinner
+17:30 = Diner, tea
+18:00 = Out/Sport
+20:30 = Go home
+21:00 = Весы, Lights out
 
 
-///////////////////////////////////////////////////////////////////
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-04:30 = Up, water, wash fase, toilet, dress
-04:40 = Tea
-04:50 = Out
-05:00 = Warm-up, stretching
-05:40 = Shower
-06:10 = Out
-07:15 = Breakfast, coffee
-07:30 = Job
-10:45 = Snack
-12:00 = Lunch
-17:30 = Out
-18:15 = Dinner
-20:30 = Sport
-19:00 = Repeat | Study
-21:30 = Lights out
+01 - 5 +	17 - 12
+02 - 5 		18 - 12
+03 - 5
+04 - 0		19 - 12
+05 - 7 		20 - 0
+06 - 7 		21 - 13
+07 - 7 		22 - 13
+08 - 0		23 - 13
+09 - 8 		24 - 0
+10 - 8		25 - 15
+11 - 8 		26 - 15
+12 - 0 		27 - 15
+13 - 10 	28 - 0
+14 - 10 	29 - 17	 
+15 - 10		30 - 17
+16 - 0 		31 - 17
 

@@ -85,6 +85,9 @@
   align-items: center;
   text-align: center;
 }
+.wrapp .container main.content .content__item .content-question {
+  overflow: auto;
+}
 .wrapp .container main.content .content__item .content-question .question-text {
   margin-top: 20px;
   margin-bottom: 30px;
@@ -115,7 +118,10 @@
   border-radius: 5px;
   box-shadow: 0px 0px 9px 0px #000000, inset 0px 0px 50px -30px #000000;
 }
-.wrapp .container main.content button.btn-new-question {
+.wrapp .container main.content .main-buttons {
+  display: block;
+}
+.wrapp .container main.content .main-buttons button.btn-new-question {
   display: block;
   border: none;
   padding: 20px 90px;
@@ -128,13 +134,13 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.wrapp .container main.content button.btn-new-question:hover {
+.wrapp .container main.content .main-buttons button.btn-new-question:hover {
   color: #000;
   background-color: #fff;
   outline: 1px solid #000;
   cursor: pointer;
 }
-.wrapp .container main.content button.btn-edit {
+.wrapp .container main.content .main-buttons button.btn-edit {
   display: block;
   border: none;
   padding: 10px 30px;
@@ -147,13 +153,13 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.wrapp .container main.content button.btn-edit:hover {
+.wrapp .container main.content .main-buttons button.btn-edit:hover {
   color: #000;
   background-color: #fff;
   outline: 1px solid #000;
   cursor: pointer;
 }
-.wrapp .container main.content button.btn-delete {
+.wrapp .container main.content .main-buttons button.btn-delete {
   display: block;
   border: none;
   padding: 10px 30px;
@@ -166,14 +172,14 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.wrapp .container main.content button.btn-delete:hover {
+.wrapp .container main.content .main-buttons button.btn-delete:hover {
   color: #000;
   background-color: #fff;
   outline: 1px solid #000;
   cursor: pointer;
 }
 .wrapp .container main.content .edit-delete {
-  display: block;
+  display: none;
   width: 300px;
   margin: 0 auto;
   text-align: center;
@@ -181,10 +187,51 @@
 .wrapp .container main.content .edit-delete .title-edit {
   display: block;
   margin-bottom: 10px;
+  font-size: 20px;
 }
 .wrapp .container main.content .edit-delete .title-delete {
   display: block;
   margin-bottom: 10px;
+  font-size: 20px;
+}
+.wrapp .container main.content .edit-delete .number-to-edit-delete {
+  margin-bottom: 15px;
+}
+.wrapp .container main.content .edit-delete .btn-cancel {
+  display: inline-block;
+  border: none;
+  padding: 5px 15px;
+  font-size: 14px;
+  margin: 0 auto;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #505050;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.wrapp .container main.content .edit-delete .btn-cancel:hover {
+  color: #000;
+  background-color: #fff;
+  outline: 1px solid #000;
+  cursor: pointer;
+}
+.wrapp .container main.content .edit-delete .btn-confirm {
+  display: inline-block;
+  border: none;
+  padding: 5px 15px;
+  font-size: 14px;
+  margin: 0 auto;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #505050;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.wrapp .container main.content .edit-delete .btn-confirm:hover {
+  color: #000;
+  background-color: #fff;
+  outline: 1px solid #000;
+  cursor: pointer;
 }
 .wrapp .container main.content form.form-input {
   display: none;

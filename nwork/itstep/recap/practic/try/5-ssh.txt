@@ -1,0 +1,24 @@
+--34--
+SSH
+__________________________________________________________________________
+1) Management IP на S4 в VLAN 99:
+   S4(config)# vlan 99
+   S4(config-vlan)# name Admin
+   S4(config-vlan)# exit
+   S4(config)# interface vlan 99
+   S4(config-if)# ip address 99.99.99.2 255.255.255.0
+   S4(config-if)# no shutdown
+   S4(config-if)# exit
+   S4(config)# ip default-gateway 99.99.99.254
+
+2) SSH на S4:
+   S4(config)# ip domain-name admin.local
+   S4(config)# crypto key generate rsa (1024)
+   S4(config)# username admin privilege 15 secret 1100
+   S4(config)# ip ssh version 2
+   S4(config)# line vty 0 4
+   S4(config-line)# transport input ssh
+   S4(config-line)# login local
+   S4(config)# end
+   S4# copy running-config startup-config
+__________________________________________________________________________

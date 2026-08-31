@@ -16,6 +16,8 @@ function equalizeHeights() {
 		const answerText = item.querySelector('.answer-text');
 		if (!questionText || !answerText) return;
 
+		questionText.style.height = 'auto';
+		answerText.style.height = 'auto';
 		const height = Math.max(questionText.offsetHeight, answerText.offsetHeight);
 		questionText.style.height = height + 'px';
 		answerText.style.height = height + 'px';
@@ -43,6 +45,28 @@ document.addEventListener('click', (e) => {
 	answerText.style.visibility =
 		answerText.style.visibility === 'hidden' ? 'visible' : 'hidden';
 	equalizeHeights();
+});
+
+function showQuestionAt(index) {
+	const items = Array.from(document.querySelectorAll('.content__item'));
+	if (!items.length) return;
+	index = Math.max(0, Math.min(index, items.length - 1));
+	items.forEach((item, i) => {
+		item.style.display = i === index ? 'flex' : 'none';
+	});
+	equalizeHeights();
+	updateEditDeleteOptions();
+}
+
+document.addEventListener('click', (e) => {
+	const btn = e.target.closest('.btn-previous, .btn-next');
+	if (!btn) return;
+	const items = Array.from(document.querySelectorAll('.content__item'));
+	if (!items.length) return;
+	let current = items.findIndex((item) => item.style.display !== 'none');
+	if (current === -1) current = 0;
+	const delta = btn.classList.contains('btn-next') ? 1 : -1;
+	showQuestionAt(current + delta);
 });
 
 function buildBlock(row) {
@@ -77,14 +101,28 @@ const inputQ = document.querySelector('.input-q');
 const inputA = document.querySelector('.input-a');
 const newQNum = document.querySelector('.new-q-num');
 const newANum = document.querySelector('.new-a-num');
+const questionsList = [];
+let editMode = null;
+
+function updateEditDeleteOptions() {
+	const select = document.querySelector('.number-to-edit-delete');
+	if (!select) return;
+	const nums = Array.from(document.querySelectorAll('.content__item'))
+		.map((el) => parseInt(el.dataset.num, 10) || 0)
+		.sort((a, b) => a - b);
+	select.innerHTML = nums
+		.map((n) => '<option value="' + n + '">' + n + '</option>')
+		.join('');
+}
 
 function renderQuestions(list) {
 	content.querySelectorAll('.content__item').forEach((el) => el.remove());
+	const ref = content.querySelector('.main-buttons') || btnNewQuestion;
 	list.forEach((row) => {
-		content.insertBefore(buildBlock(row), btnNewQuestion);
+		content.insertBefore(buildBlock(row), ref);
 	});
 	updateNumbers();
-	equalizeHeights();
+	showQuestionAt(0);
 }
 
 async function loadQuestions() {
@@ -92,6 +130,8 @@ async function loadQuestions() {
 		const res = await fetch('/api/questions?page=' + page);
 		if (!res.ok) return;
 		const list = await res.json();
+		questionsList.length = 0;
+		Array.prototype.push.apply(questionsList, list);
 		renderQuestions(list);
 	} catch (err) {}
 }
@@ -153,6 +193,127 @@ if (page && btnNewCreate && inputQ && inputA) {
 
 if (page && btnNewExit && formInput && btnsCreateExit) {
 	btnNewExit.addEventListener('click', hideForm);
+}
+
+if (page) {
+	const btnEdit = document.querySelector('.btn-edit');
+	const btnDelete = document.querySelector('.btn-delete');
+	const btnCancel = document.querySelector('.btn-cancel');
+	const btnConfirm = document.querySelector('.btn-confirm');
+	const mainButtons = document.querySelector('.main-buttons');
+	const editDelete = document.querySelector('.edit-delete');
+	const titleEdit = document.querySelector('.title-edit');
+	const titleDelete = document.querySelector('.title-delete');
+	const select = document.querySelector('.number-to-edit-delete');
+
+	if (btnEdit && mainButtons && editDelete) {
+		btnEdit.addEventListener('click', () => {
+			editMode = 'edit';
+			mainButtons.style.display = 'none';
+			if (titleEdit) titleEdit.style.display = 'block';
+			if (titleDelete) titleDelete.style.display = 'none';
+			editDelete.style.display = 'block';
+			updateEditDeleteOptions();
+			showEditForm();
+		});
+	}
+
+	function showEditForm() {
+		const qNum = parseInt(select.value, 10);
+		const row = questionsList.find((q) => q.q_num === qNum);
+		if (row && inputQ && inputA) {
+			inputQ.value = row.question;
+			inputA.value = row.answer;
+		}
+		if (formInput) {
+			formInput.style.display = 'flex';
+			void formInput.offsetWidth;
+			formInput.classList.add('is-visible');
+		}
+		if (btnsCreateExit) btnsCreateExit.style.display = 'none';
+	}
+
+	if (select) {
+		select.addEventListener('change', () => {
+			if (editMode === 'edit' && inputQ && inputA) {
+				const qNum = parseInt(select.value, 10);
+				const row = questionsList.find((q) => q.q_num === qNum);
+				if (row) {
+					inputQ.value = row.question;
+					inputA.value = row.answer;
+				}
+			}
+		});
+	}
+
+	function closeEditForm() {
+		if (formInput) {
+			formInput.classList.remove('is-visible');
+			formInput.style.display = 'none';
+		}
+		if (inputQ) inputQ.value = '';
+		if (inputA) inputA.value = '';
+	}
+
+	if (btnDelete && mainButtons && editDelete) {
+		btnDelete.addEventListener('click', () => {
+			editMode = null;
+			mainButtons.style.display = 'none';
+			if (titleEdit) titleEdit.style.display = 'none';
+			if (titleDelete) titleDelete.style.display = 'block';
+			editDelete.style.display = 'block';
+			updateEditDeleteOptions();
+			closeEditForm();
+		});
+	}
+
+	if (btnCancel && editDelete && mainButtons) {
+		btnCancel.addEventListener('click', () => {
+			editMode = null;
+			closeEditForm();
+			editDelete.style.display = 'none';
+			mainButtons.style.display = 'block';
+		});
+	}
+
+	if (btnConfirm && select && editDelete && mainButtons) {
+		btnConfirm.addEventListener('click', async () => {
+			const qNum = parseInt(select.value, 10);
+			if (!qNum) return;
+			if (editMode === 'edit') {
+				const question = inputQ.value.trim();
+				const answer = inputA.value.trim();
+				if (!question || !answer) return;
+				try {
+					const res = await fetch(
+						'/api/questions?page=' + page + '&q_num=' + qNum,
+						{
+							method: 'PUT',
+							headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify({ question, answer })
+						}
+					);
+					if (!res.ok) return;
+					editMode = null;
+					closeEditForm();
+					editDelete.style.display = 'none';
+					mainButtons.style.display = 'block';
+					await loadQuestions();
+				} catch (err) {}
+				return;
+			}
+			try {
+				const res = await fetch(
+					'/api/questions?page=' + page + '&q_num=' + qNum,
+					{ method: 'DELETE' }
+				);
+				if (!res.ok) return;
+				await loadQuestions();
+				editDelete.style.display = 'none';
+				mainButtons.style.display = 'block';
+			} catch (err) {}
+		});
+	}
 }
 
 window.addEventListener('resize', equalizeHeights);
