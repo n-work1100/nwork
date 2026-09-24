@@ -1,0 +1,15 @@
+----
+Налаштувати DHCP
+__________________________________________________________________________
+R1(config)# ip dhcp excluded-address 192.168.10.1 192.168.10.10
+R1(config)# ip dhcp pool LAN-POOL-1
+R1(dhcp-config)# network 192.168.10.0 255.255.255.0
+R1(dhcp-config)# default-router 192.168.10.1
+R1(dhcp-config)# dns-server 192.168.30.254
+R1(dhcp-config)# domain-name example.com
+R1(dhcp-config)# lease 2 12 0 
+R1(dhcp-config)# end
+__________________________________________________________________________
+
+
+
