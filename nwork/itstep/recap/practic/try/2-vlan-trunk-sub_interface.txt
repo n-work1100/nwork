@@ -47,3 +47,23 @@ Switch(config)# interface gigabitEthernet 0/1
 Switch(config-if)# switchport mode trunk
 Switch(config-if)# switchport trunk native vlan 99
 __________________________________________________________________________
+
+
+----
+Блокувати трафік PC5(Admin) до R1
+__________________________________________________________________________
+R2(config)# ip access-list extended PC5-LIMIT
+R2(config-ext-nacl)# permit icmp host 99.99.99.99 10.10.11.0 0.0.0.255 echo
+R2(config-ext-nacl)# permit icmp host 99.99.99.99 20.20.21.0 0.0.0.255 echo
+R2(config-ext-nacl)# deny  icmp host 99.99.99.99 any
+R2(config-ext-nacl)# permit ip any any
+R2(config)# interface GigabitEthernet1/0.99
+R2(config-subif)# ip access-group PC5-LIMIT in
+__________________________________________________________________________
+
+
+----
+SSH
+__________________________________________________________________________
+
+__________________________________________________________________________

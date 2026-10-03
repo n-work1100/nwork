@@ -9,6 +9,27 @@ R3(config-router)#network 194.44.1.10 0.0.0.0 area 0 (це один із спо�
 
 R1(config-if)#ip ospf 1 area 0 (включити ospf на інтерфейсі)
 
+R1(config)#router ospf 1
+R1(config-router)#router-id 1.1.1.1 (Явно налаштувати ідентифікатор для маршрутизатора)
+
+R1(config)#router ospf 1
+R1(config-router)#passive-interface g0/0 (цей інтерфейс буде пасивним(туди не потрібен OSPF))
+
+R1(config)# interface GigabitEthernet 0/0/0
+R1(config-if)# ip ospf priority 255 (налаштувати пріоритет (DR))
+
+R1# clear ip ospf process (очистити процес OSPF на R1)
+Reset ALL OSPF processes? [no]: y
+
+(Кудою буде іти трафік)
+R1(config)# interface g0/0/1
+R1(config-if)# ip ospf cost 30 
+R1(config-if)# interface lo0
+R1(config-if)# ip ospf cost 10
+
+Router(config-if)# ip ospf hello-interval seconds
+Router(config-if)# ip ospf dead-interval seconds
+
 R1#sh ip ospf neighbor
 __________________________________________________________________________
 

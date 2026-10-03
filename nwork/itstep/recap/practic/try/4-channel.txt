@@ -9,8 +9,10 @@ S1(config-if-range)# exit
 
 S1(config)# interface port-channel 1
 S1(config-if)# switchport mode trunk
-S1(config-if)#switchport nonegotiate ????
+S1(config-if)# switchport nonegotiate ????
 S1(config-if)# switchport trunk allowed vlan 1,2,20
 
 Switch(config)#spanning-tree vlan 1 root primary
 __________________________________________________________________________
+
+
