@@ -1,0 +1,29 @@
+** Dynamic Routing Protocol (протокол динамічної маршрутизації)
+
+		--> Interior Gateway Protocol (IGPs) (Протокол внутрішнього шлюзу)
+
+			--> Distance Vector Routing Protocols (Протоколи маршрутизації на основі векторів відстані)
+
+					--> RIPv1 && RIPv2 (Routing Information Protocol (Протокол маршрутизації))
+
+					--> IGRP (Interior Gateway Routing Protocol (Протокол маршрутизації внутрішнього шлюзу))
+					&&
+						EIGRP (Enhanced Interior Gateway Routing Protocol (Розширений протокол маршрутизації внутрішнього шлюзу))
+
+			--> Link-State Routing Protocols (Протоколи маршрутизації на основі стану каналу)
+
+					--> OSPF (Open Shortest Path First (Спочатку відкрити найкоротший шлях))
+
+					--> IS-IS (Intermediate System to Intermediate System (Середня система до середньої системи))
+
+		--> Exterior Gateway Protocols (EGPs (Протоколи зовнішніх шлюзів))
+
+			--> Path-Vector Routing Protocols (Протоколи маршрутизації за вектором шляху)
+			--> BGP (Border Gateway Protocol (Протокол прикордонного шлюзу))
+
+
+
+
+
+
+

@@ -1,0 +1,453 @@
+# read_user.txt
+
+### -1.1
+Привет, проверка
+
+### -2.0
+Вот что нужно: в E:\nwork\itstep\recap\practic\vlan-route-ip-channel_do.pkt опиши как настроить что бы PC7(ip 99.99.99.1 Vlan 99(Admin)) мог пинговать только 
+PC4, PC5, PC6, PC8 через свитч S4. Я так понимаю свитчу S4 нужно дать ip address!?
+
+### -2.1
+Опиши как настроить подключение через SSH до S4 что бы пинговать только PC4, PC5, PC6, PC8
+
+### -3.0
+Создадим еще один файл write_user.txt по тому же адресу что и read_user.txt. И создай команду /write с ключем(-). После команды /write записывай в write_user.txt 
+то что я попрошу. Пример: /write -1.0 запиши в write_user.txt ### -1.0 дальше пробел и то что надо записать(кароче формат записей как у read_user.txt)
+
+### -4.0
+У меня роутер tp-link AC1200 867Mbps 5GHz+ 400Mbps 2.4 GHz тот что сейчас подключен.
+Была скорость до 100Mbps, вчера изменил тариф на 1000 Mbps но скорость осталась прежней. Интернет подключен через оптоволокно(picotel).
+От коробочки picotel до роутера витая пара 8ми жильная, а от роутера до пк 4х жильная. Как настроить 1000 Mbps? И проверь поддерживает ли мая сетевая карта 1000 Mbps.
+Скорость wi-fi тоже не изменилась на 1000
+
+### -5.0
+В качестве обучения по IT безопасности  хочу настроить удаленный доступ к своему телефону.
+Как это сделать?
+
+### -5.1
+Опиши как настроить SSH/Tailscale
+
+### -6.0
+После ввода termux-location -p gps ошибка: API: is not yet available on Google Play - see https://github.com/termux-play-store/termux-apps/issues/29 for updates
+
+### -7.0
+Не могу запустить виртуальную машину Ubuntu. C:\Program Files\Oracle\VirtualBox
+Not in a hypervisor partition (HVP=0) (VERR_NEM_NOT_AVAILABLE).
+VT-x is disabled in the BIOS for all CPU modes (VERR_VMX_MSR_ALL_VMX_DISABLED).
+Код ошибки: E_FAIL (0x80004005)
+Компонент: ConsoleWrap
+Интерфейс: IConsole {6ac83d89-6ee7-4e33-8ae6-b257b2e81be8}
+Как исправить?
+
+### -8.0
+arr1 = []
+j = 1
+while j <= 10:
+    arr.append(i)
+    j += 1
+print(arr1)
+
+Выводится пустой массив, что не так?
+
+### -9.0
+Пинг только PC4-PC6, PC8: шлюзы ПК 30.30.30.254 / 40.40.40.254 / 99.99.99.254 / 50.50.50.254 + 
+ACL extended на R2 (ip access-group 100 in на Gi2/0.99), разрешающий ICMP только на 30.30.30.1, 30.30.30.2, 40.40.40.1, 50.50.50.1.
+Опиши как команды для ввода
+
+### -9.1
+Посмотри E:\nwork\itstep\recap\practic\vlan-route-ip-channel_template_do.pkt почему не пингуются vlan 10 и vlan 20 ? /not
+
+### -10.0
+Посмотри E:\nwork\itstep\recap\practic\vlan-route-ip-channel_template_do.pkt.
+Таже проблема, вроде бы все сделал. PC7 пингует PC0, PC1, PC2, PC3, а не должен.
+Опиши что еще нужно сделать?
+
+### -11.0
+Игра D:\disk1\games\bus\Bus Simulator 21 подвисает, мигает экран, наверное видеокарта не тянет.
+Можно ли что то сделать?
+
+### -12.0
+У меня Disk1 это MBR а Disk2 GPT. Это нормально?
+
+### -12.1
+Есть свободное место диск G 51.5 GB. Он GPT. Как его добавить до диска C 111.79 GB MBR?
+Добавить хочу через MiniTool Partition Wizard
+
+### -13.0
+В игре D:\disk1\games\euro\Euro Truck Simulator 2 надо настроить графику по максимуму на сколько возможно.
+Но так чтоб игра не висла. И не включаются фары. В кабине датчик на фары включен но фары визуально не светятся.
+Что можеш предложить?
+
+### -14.0
+Посмотри E:\nwork\itstep\recap\practic\ssh-phone-admin_do.pkt почему PC1 ping 99.99.99.2 remote host not responding?
+Что надо исправить?
+
+### -15.0
+Посмотри весть код и структуру E:\nwork\repeat\
+Почему не срабатывает шрифт Rubik?
+
+### -16.0
+Опиши как сделать что бы PC1 не мог пинговать PC0, а только PC2.
+Топология сдесь E:\nwork\itstep\recap\practic\ssh-phone-admin_do.pkt
+
+### -16.1
+Посмотри E:\nwork\itstep\recap\practic\try\5-ssh-try.pkt.
+Почему не пингуются PC1, PC2 до R1(99.99.99.254)?
+И почему не могу с PC2 по ssh подключиться к S1(99.99.99.99)? /not
+
+### -16.2
+Посмотри E:\nwork\itstep\recap\practic\try\2-vlan-trunk-sub_interface-try.pkt
+Почему не пингуются 10.10.10.10 и 10.10.10.20 ? /not
+
+### -16.3
+Посмотри E:\nwork\itstep\recap\practic\try\2-vlan-trunk-sub_interface-try.pkt
+Почему не пингуются 10.10.10.10 и 20.20.20.10 ?
+
+### -16.4
+Посмотри E:\nwork\itstep\recap\practic\try\6-dhcp-try.pkt
+Посмотри почему не пингуются ничего не пингуется к DNS1(192.168.30.254).
+Проверь сам в чем проблема и опиши решение
+
+### -16.5
+Посмотри E:\nwork\itstep\recap\practic\try\6-dhcp-try.pkt
+Почему не пингуется R1 на DNS1 ?
+
+### -16.6
+Результат вывода R1#sh running-config | section dhcp
+ip dhcp excluded-address 192.168.10.1 192.168.10.10
+ip dhcp excluded-address 192.168.20.1 192.168.20.10
+ip dhcp pool LAN-1
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.1
+ dns-server 192.168.30.254
+ip dhcp pool LAN-2
+ network 192.168.20.0 255.255.255.0
+ default-router 192.168.20.1
+ dns-server 192.168.30.254
+
+Результат ping 192.168.30.254
+C:\>ping -t 192.168.30.254
+
+Pinging 192.168.30.254 with 32 bytes of data:
+
+Reply from 192.168.10.1: Destination host unreachable.
+Reply from 192.168.10.1: Destination host unreachable.
+Reply from 192.168.10.1: Destination host unreachable.
+
+Что не так?
+
+### -16.7
+Маршрут есть
+C    192.168.10.0/24 is directly connected, GigabitEthernet0/0
+C    192.168.20.0/24 is directly connected, GigabitEthernet1/0
+S    192.168.30.0/24 is directly connected, GigabitEthernet1/0
+
+Теперь Request timed out.
+C:\>ping -t 192.168.30.254
+
+Pinging 192.168.30.254 with 32 bytes of data:
+
+Request timed out.
+Request timed out.
+Request timed out.
+
+Что не так?
+
+### -16.8
+Посмотри C:\Users\n-work\Desktop\gw123.pkt
+Почему не пингуется PC1 и PC0
+Что не так?
+
+### -16.9
+Посмотри пожалуйста E:\nwork\itstep\recap\practic\try\9-hsrp.pkt
+Почему не пингует PC0 на PC1 ?
+Что нужно сделать?
+
+### -16.10
+Посмотри пожалуйста E:\nwork\itstep\recap\practic\try\9-hsrp.pkt
+Почему я не могу задать на R2 для интерфейса g1/0 ip адрес 10.1.1.1 ?
+Выдает ошибку:
+R2(config-if)#ip address 10.1.1.1 255.255.255.0
+% 10.1.1.0 overlaps with GigabitEthernet2/0
+
+### -16.11
+Посмотри пожалуйста E:\nwork\itstep\recap\practic\try\2-vlan-trunk-sub_interface-try.pkt
+Почему не пингуется PC1 и PC3 ?
+
+### -16.12
+Как сделать так что бы PC5(Admin) мог пинговать только PC3 и PC4, а PC1 и PC2 не мог?
+
+### -16.13
+Посмотри E:\nwork\itstep\recap\practic\try\6-dhcp-try.pkt
+При попытке пинговать 192.168.30.254 выдает: Reply from 192.168.10.1: Destination host unreachable
+/not
+
+### -17.0
+Просканирую E:\nwork\repeat\. Сейчас мы будем создавать программу для обучения.
+Типа билетов на экзамене, типа шпоргалки. Делаем все по порядку. Сначала все спланируем.
+Через JavaScript нужно настроить следующее:
+1. Содержимое блока с классом answer-text изначально должено быть скрыто(hide).
+При нажатии на кнопку btn-show-hide (Show / Hide) содержимое появляется, при повторном пропадает.
+Давай пока настроим это. Скрипт пиши в assets/js/script.js.
+
+### -17.1
+Дальше, настрой что бы блоки question-text и answer-text всегда были одной высоты.
+Тоесть если один блок выше другого то блок что ниже принимает его height
+
+### -17.2
+Дальше настроим 2 кнопки. Изначально form.form-input и btns-create-exit = display: none;
+При нажатии на btn-new-question (New Question) для form.form-input нужно сделать display: flex; а для btns-create-exit display: block;
+Нужно чтоб они появились. Пока делай это
+
+### -17.3
+При нажатии на кнопку btn-new-exit вся форма с кнопками должны опять исчезнуть.
+
+### -17.4
+Добавь эфекты: плавное появление и исчезновение формы + тоже для кнопок при наведении(hevor).
+Плавность эфекта 1 секунда
+
+### -17.5
+Для кнопок плавное появление измени на 0.4 секунды. Исчезновение сразу и форма и кнопки
+
+### -17.6
+Далее нужно настроить так: блок content__item это блок вопроса и ответа к нему. Класс q-1 я поставил как номер блока вопрос/ответ.
+В блоке q-num 1 - это номер вопроса, а n это количество всех вопросов.
+В блоке a-num 1 - это номер ответа на вопрос q-num, а n это количество всех ответов.
+Когда пользователь нажимает btn-new-question(вызывает форму), то в new-q-num(New question #2) после # должен подставляться соответствующий 
+номер вопроса(тоесть следующий). Тоже самое и для new-a-num(Answer to #2).
+Когда пользователь создает новый вопрос в input-q и к нему ответ input-a и нажал btn-new-create, нужно создать новый блок content__item сразу за предыдущем 
+с этими вопросом и ответом что указал пользователь.
+Напиши вси ли понятно, если есть идеи, пиши.
+
+### -17.7
+По предыдущему вопросу
+Задача:
+1. Номер(#2) я удалил, подставишь сам.
+2. Ok!
+Идеи/вопросы
+1. Ok!
+2. Ok!
+3. Только номер далее пойдет #2, #3... После Create форму закрыть
+4. Ok!
+
+### -17.8
+Где вводить node server.js → http://localhost:3000 ?
+
+### -17.9
+Я работаю в Visual Studio Code. Можно сделать так чтобы node server.js → http://localhost:3000 запускался из Visual Studio Code при запуске Go Live?
+
+### -17.10
+При вызове формы кнопки .btn-edit и .btn-delete должны исчезнуть, а при нажатии на .btn-new-exit появиться назад.
+
+### -17.11
+Продолжаем делать \repeat. Сделай при нажатии на кнопку .btn-delete блоки .main-buttons и .btn-edit исчезают (display: none;).
+
+### -17.12
+Сделай следующее: заполняй выпадающий список .number-to-edit-delete в соотвецтвии с каличесвом вопросов.
+
+### -17.13
+Если нажата .btn-delete то:
+при нажатии кнопки .btn-cancel скрыть .edit-delete и отобразить назад .main-buttons, а при нажатии .btn-confirm удалить из базы данных вопрос и ответ выбраный пользователем в .number-to-edit-delete.
+После чего проиндексировать базу данных и сделать чтобы вопросы и ответы выводились по номерам(по очереди)
+
+### 17.14
+Сделай что бы выводился только один .content__item. Все остальные скрыты.
+При нажатии на .btn-previous выводи предыдущий вопрос с ответом к нему.
+При нажатии на .btn-next выводи следующий вопрос с ответом к нему.
+
+### 17.15
+Сделай так: Сейчас при переходе на вопрос #2 все ок, но вопрос #2 состоит только из одной строчки.
+Соотвецтвенно высота блока .question-text уменшается и это нормально.
+Но при переходе на предыдущий вопрос высота такойже и остается как для вопроса #2.
+И при этом кнопки .btn-previous и .btn-next закрывают текст.
+
+### 17.16
+Ты можешь добавить в .input-q и .input-a проверку орфографии(подчеркивать красным)?
+
+### -17.17
+Будем делать возможность редактировать ответы и вопросы.
+Если нажата .btn-edit то:
+скрывать .main-buttons,
+скрывать .title-delete,
+показывай .title-edit.
+Выбраный номер(вопрос ответ) в .number-to-edit-delete вывести в .form-input, вопрос подставить в .input-q, а ответ в .input-a.
+Если нажата .btn-confirm от перезапиши вопрос и/или ответ в тоже место в базе данных с тем же номером.
+Если пользователь нажал .btn-cancel скрывать .edit-delete, показать .main-buttons.
+
+### -17.18
+Так, все хорошо, но сейчас при выборе номера вопроса в .number-to-edit-delete в .input-q и .input-a подставляется всегда первый вопрос с ответом.
+Нужно что бы подставлялись те вопросы ответы которые выбрал пользователь в .number-to-edit-delete. Проанализируй
+
+### -18.0
+В игре D:\disk1\games\pes2013\R.G. Catalyst\Pro Evolution Soccer 2013 не работают(одновременно) сочетания клавиш: Shift + q + стрелочка вверх + стреллочка в лево.
+Shift + q + стрелочка вверх + стреллочка в право работает. Можно ли это исправить?
+
+### -19.0
+В D:\disk1\games\pes2017\Pro Evolution Soccer 2017-SMoKE я играю в легенду с камерой 'Сверху'.
+Всегда камера шла за играком, теперьт за мячем.
+Как настроить что бы камера шла за играком?
+
+### -20.0
+Эта игра D:\disk1\games\cossacs я так понимаю на виндовс 10 не идет. Как это исправить?
+
+### -20.1
+При запуске Казаки (D:\disk1\games\cossacs) ошибка:
+Engine.exe has detected, thet video memory is not configured 
+properly. Please restart computer and set AGP aperture size = 
+256 MB or more in BIOS configuration program. Usually you 
+can enter BIOS configuration utility by pressing 'DEL' while 
+computer restarts.
+
+### -21.0
+К моему роутеру через кабель подключен ПК 91.211.133.190.
+Ты его видишь?
+
+### -21.1
+Нужно настроить доступ к 192.168.0.133, что бы я мог объмениваться данными 
+между этим и 192.168.0.133 ПК. /not
+
+### -21.2
+Какой канал доступен на 133: SSH или WinRM (или только SMB)?
+Логин + пароль учётки на 133 (с правами администратора)?
+Возможность перевести профиль сети 133 в «Частная сеть», или он уже Private?
+Как это все посмотреть на 192.168.0.133 ?
+
+### -21.3
+Результат в PowerShell:
+PS C:\Users\Artur> whoami
+moting                                                                                                         Get-Service : Не удается найти позиционный параметр, принимающий аргумент "quickconfig".                                                                                            строка:1 знак:1                                                                                                                                                                     + Get-Service WinRM, winrm quickconfig / Enable-PSRemoting                                                                                                                          + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                                              + CategoryInfo          : InvalidArgument: (:) [Get-Service], ParameterBindingException                                                                                             + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetServiceCommand                                                                                                                                                                                                                                                               PS C:\Users\Artur> Get-NetConnectionProfile                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 Name                     : Сеть                                                                                                                                                     InterfaceAlias           : Ethernet                                                                                                                                                 InterfaceIndex           : 4                                                                                                                                                        NetworkCategory          : Private                                                                                                                                                  DomainAuthenticationKind : None                                                                                                                                                     IPv4Connectivity         : Internet                                                                                                                                                 IPv6Connectivity         : NoTraffic                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            PS C:\Users\Artur> net localgroup administrators                                                                                                                                    Системная ошибка 1376.                                                                                                                                                                                                                                                                                                                                                  Указанная локальная группа не существует.                                                                                                                                                                                                                                                                                                                               PS C:\Users\Artur>  net share net share                                                                                                                                             Синтаксис данной команды:                                                                                                                                                                                                                                                                                                                                               NET SHARE                                                                                                                                                                           общий_ресурс                                                                                                                                                                                  общий_ресурс=диск:путь [/GRANT:пользователь,[READ | CHANGE | FULL]]                                                                                                                                        [/USERS:число | /UNLIMITED]                                                                                                                                                         [/REMARK:"текст"]                                                                                                                                                                   [/CACHE:Manual | Documents| Programs | BranchCache | None]                                                                                                                   общий_ресурс [/USERS:число | /UNLIMITED]                                                                                                                                                         [/REMARK:"текст"]                                                                                                                                                                   [/CACHE:Manual | Documents | Programs | BranchCache | None]                                                                                                            {общий_ресурс | имя_устройства | диск:путь} /DELETE                                                                                                                                 общий_ресурс \\имя_компьютера /DELETE   
+
+
+### -21.4                                                                                                                                                                                               
+Результат:
+PS C:\Users\Artur> Get-NetConnectionProfile                                                                                                                                                                                                                             Name                     : Сеть                                                         InterfaceAlias           : Ethernet                                                     InterfaceIndex           : 4                                                            NetworkCategory          : Private                                                      DomainAuthenticationKind : None                                                         IPv4Connectivity         : Internet                                                     IPv6Connectivity         : NoTraffic                                                                                                                                                                                                                                                                                                                            PS C:\Users\Artur> Get-Service WinRM                                                                                                                                            Status   Name               DisplayName                                                 ------   ----               -----------                                                 Stopped  WinRM              Служба удаленного управления Window...                                                                                                                                                                                                      PS C:\Users\Artur> Get-Service sshd -ErrorAction SilentlyContinue                       PS C:\Users\Artur> Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'                                                                                                                                                                                   Name  : OpenSSH.Client~~~~0.0.1.0                                                       State : NotPresent                                                                                                                                                              Name  : OpenSSH.Server~~~~0.0.1.0                                                       State : NotPresent                                                                                                                                                                                                                                                                                                                                              PS C:\Users\Artur> net localgroup administrators                                        Системная ошибка 1376.                                                                                                                                                          Указанная локальная группа не существует.                                                                                                                                       PS C:\Users\Artur> net sharenet share                                                   Синтаксис данной команды:                                                                                                                                                       NET                                                                                         [ ACCOUNTS | COMPUTER | CONFIG | CONTINUE | FILE | GROUP | HELP |                         HELPMSG | LOCALGROUP | PAUSE | SESSION | SHARE | START |                                STATISTICS | STOP | TIME | USE | USER | VIEW ]                                    PS C:\Users\Artur> ipconfig /all                                                                                                                                                Настройка протокола IP для Windows                                                                                                                                                 Имя компьютера  . . . . . . . . . : DESKTOP-QGSUT38                                     Основной DNS-суффикс  . . . . . . :                                                     Тип узла. . . . . . . . . . . . . : Гибридный                                           IP-маршрутизация включена . . . . : Нет                                                 WINS-прокси включен . . . . . . . : Нет                                                                                                                                      Адаптер Ethernet Ethernet:                                                                                                                                                         DNS-суффикс подключения . . . . . :                                                     Описание. . . . . . . . . . . . . : NVIDIA nForce Networking Controller                 Физический адрес. . . . . . . . . : 00-25-22-0D-FC-61                                   DHCP включен. . . . . . . . . . . : Да                                                  Автонастройка включена. . . . . . : Да                                                  Локальный IPv6-адрес канала . . . : fe80::df74:b6fb:59de:6cd3%4(Основной)               IPv4-адрес. . . . . . . . . . . . : 192.168.0.133(Основной)                             Маска подсети . . . . . . . . . . : 255.255.255.0                                       Аренда получена. . . . . . . . . . : среда, 12 августа 2026 г. 13:01:13                 Срок аренды истекает. . . . . . . . . . : среда, 12 августа 2026 г. 16:17:38            Основной шлюз. . . . . . . . . : 192.168.0.1                                            DHCP-сервер. . . . . . . . . . . : 192.168.0.1                                          IAID DHCPv6 . . . . . . . . . . . : 83895586                                            DUID клиента DHCPv6 . . . . . . . : 00-01-00-01-31-91-FF-6F-00-25-22-0D-FC-61           DNS-серверы. . . . . . . . . . . : 192.168.0.1                                          NetBios через TCP/IP. . . . . . . . : Включен 
+
+
+### -21.5
+Шаг 2 - Выполнил.
+Вот по moting:
+PS C:\Users\Artur> net user mothing                                                                                                                                                 Не найдено имя пользователя.                                                                                                                                                                                                                                                                                                                                            Для вызова дополнительной справки наберите NET HELPMSG 2221.                                                                                                                                                                                                                                                                                                            PS C:\Users\Artur> net user Artur                                                                                                                                                   Имя пользователя                       Artur                                                                                                                                        Полное имя                                                                                                                                                                          Комментарий                                                                                                                                                                         Комментарий пользователя                                                                                                                                                            Код страны или региона                 000 (Стандартный системный)                                                                                                                  Учетная запись активна                 Yes                                                                                                                                          Учетная запись просрочена              Никогда                                                                                                                                                                                                                                                                                                                          Последний пароль задан                 12.08.2026 14:41:04                                                                                                                          Действие пароля завершается            Никогда                                                                                                                                      Пароль допускает изменение             12.08.2026 14:41:04                                                                                                                          Требуется пароль                       No                                                                                                                                           Пользователь может изменить пароль     Yes                                                                                                                                                                                                                                                                                                                              Разрешенные рабочие станции            Все                                                                                                                                          Сценарий входа                                                                                                                                                                      Конфигурация пользователя                                                                                                                                                           Основной каталог                                                                                                                                                                    Последний вход                         12.08.2026 13:01:17                                                                                                                                                                                                                                                                                                              Разрешенные часы входа                 Все                                                                                                                                                                                                                                                                                                                              Членство в локальных группах           *Администраторы                                                                                                                              Членство в глобальных группах          *Отсутствует                                                                                                                                 Команда выполнена успешно.                                                                                                                                                                                                                                                                                                                                              PS C:\Users\Artur> whoami                                                                                                                                                           desktop-qgsut38\artur                                                                                                                                                               PS C:\Users\Artur> moting                                                                                                                                                           moting : Имя "moting" не распознано как имя командлета, функции, файла сценария или выполняемой программы. Проверьте правильность написания имени, а также наличие и правильность   пути, после чего повторите попытку.                                                                                                                                                 строка:1 знак:1                                                                                                                                                                     + moting                                                                                                                                                                            + ~~~~~~                                                                                                                                                                                + CategoryInfo          : ObjectNotFound: (moting:String) [], CommandNotFoundException                                                                                              + FullyQualifiedErrorId : CommandNotFoundException                                                                                                                                                                                                                                                                                                                  PS C:\Users\Artur> whoami moting                                                                                                                                                    ОШИБКА: Неправильный параметр или аргумент - 'moting'.                                                                                                                              Введите "WHOAMI /?" для получения справки по использованию.                                                                                                                         PS C:\Users\Artur>    
+
+### -21.6
+Результат:
+PS C:\Users\Artur> net localgroup                                                                                                                                               Псевдонимы для \\DESKTOP-QGSUT38                                                                                                                                                -------------------------------------------------------------------------------         *IIS_IUSRS                                                                              *Администраторы                                                                         *Администраторы Hyper-V                                                                 *Владельцы устройства                                                                   *Гости                                                                                  *Криптографические операторы                                                            *Операторы архива                                                                       *Операторы настройки сети                                                               *Операторы помощи по контролю учетных записей                                           *Опытные пользователи                                                                   *Пользователи                                                                           *Пользователи DCOM                                                                      *Пользователи журналов производительности                                               *Пользователи системного монитора                                                       *Пользователи удаленного рабочего стола                                                 *Пользователи удаленного управления                                                     *Репликатор                                                                             *Управляемая системой группа учетных записей                                            *Читатели журнала событий                                                               Команда выполнена успешно.                                                                                                                                                      PS C:\Users\Artur> whoami /groups | findstr /i "Администраторы S-1-5-32-544"            BUILTIN\??????????????                                               ?????????               S-1-5-32-544 ???????????? ??????, ???????? ?? ?????????, ?????????? ??????, ???????? ??????                                                                                PS C:\Users\Artur> whoami /groups                                                                                                                                               Сведения о группах                                                                      -----------------                                                                                                                                                               Группа                                                               Тип                     SID          Атрибуты                                                                                                                                                      ==================================================================== ======================= ============ ==============================================================================                                                                                Все                                                                  Хорошо известная группа S-1-1-0      Обязательная группа, Включены по умолчанию, Включенная группа                                                                                                 NT AUTHORITY\Локальная учетная запись и член группы "Администраторы" Хорошо известная группа S-1-5-114    Обязательная группа, Включены по умолчанию, Включенная группа                                                                                                 BUILTIN\Администраторы                                               Псевдоним               S-1-5-32-544 Обязательная группа, Включены по умолчанию, Включенная группа, Владелец группы                                                                                BUILTIN\Пользователи                                                 Псевдоним               S-1-5-32-545 Обязательная группа, Включены по умолчанию, Включенная группа                                                                                                 NT AUTHORITY\ИНТЕРАКТИВНЫЕ                                           Хорошо известная группа S-1-5-4      Обязательная группа, Включены по умолчанию, Включенная группа                                                                                                 КОНСОЛЬНЫЙ ВХОД                                                      Хорошо известная группа S-1-2-1      Обязательная группа, Включены по умолчанию, Включенная группа                                                                                                 NT AUTHORITY\Прошедшие проверку                                      Хорошо известная группа S-1-5-11     Обязательная группа, Включены по умолчанию, Включенная группа                                                                                                 NT AUTHORITY\Данная организация                                      Хорошо известная группа S-1-5-15     Обязательная группа, Включены по умолчанию, Включенная группа                                                                                                 NT AUTHORITY\Локальная учетная запись                                Хорошо известная группа S-1-5-113    Обязательная группа, Включены по умолчанию, Включенная группа                                                                                                 ЛОКАЛЬНЫЕ                                                            Хорошо известная группа S-1-2-0      Обязательная группа, Включены по умолчанию, Включенная группа                                                                                                 NT AUTHORITY\Проверка подлинности NTLM                               Хорошо известная группа S-1-5-64-10  Обязательная группа, Включены по умолчанию, Включенная группа                                                                                                 Обязательная метка\Высокий обязательный уровень                      Метка                   S-1-16-12288                                                                                                                                                               PS C:\Users\Artur> findstr /i "Администраторы S-1-5-32-544"                             PS C:\Users\Artur> reg query "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v LimitBlankPasswordUse                                                                                                                                                                       HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa                                     LimitBlankPasswordUse    REG_DWORD    0x0                                                                                                                                   PS C:\Users\Artur> reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v LocalAccountTokenFilterPolicy                                                                                                                                          HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System                LocalAccountTokenFilterPolicy    REG_DWORD    0x1  
+
+
+
+### -21.7
+Результат:
+PS C:\Users\Artur> Set-Item WSMan:\localhost\Shell\AllowRemoteShellAccess -Value $true  Set-Item : Невозможно изменить параметр конфигурации AllowRemoteShellAccess, поскольку  он управляется политиками. Чтобы изменить этот параметр конфигурации, для политики      необходимо установить значение "Не задано".                                             строка:1 знак:1                                                                         + Set-Item WSMan:\localhost\Shell\AllowRemoteShellAccess -Value $true                   + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                       + CategoryInfo          : NotSpecified: (:) [Set-Item], InvalidOperationException       + FullyQualifiedErrorId : System.InvalidOperationException,Microsoft.PowerShell.Co     mmands.SetItemCommand                                                                                                                                                        PS C:\Users\Artur> Restart-Service WinRM                                                PS C:\Users\Artur>  
+
+
+### -21.8
+Результат:
+PS C:\Users\Artur> reg query "HKLM\SOFTWARE\Policies\Microsoft\Windows\WinRM\Service" /v AllowRemoteShellAccess                                                                                                                                                                                                                                                 Ошибка: Не удается найти указанный раздел или параметр в реестре.                       PS C:\Users\Artur> reg delete "HKLM\SOFTWARE\Policies\Microsoft\Windows\WinRM\Service" /v AllowRemoteShellAccess /f                                                             Ошибка: Не удается найти указанный раздел или параметр в реестре.                       PS C:\Users\Artur> Set-Item WSMan:\localhost\Shell\AllowRemoteShellAccess -Value $true  Set-Item : Невозможно изменить параметр конфигурации AllowRemoteShellAccess, поскольку  он управляется политиками. Чтобы изменить этот параметр конфигурации, для политики      необходимо установить значение "Не задано".                                             строка:1 знак:1                                                                         + Set-Item WSMan:\localhost\Shell\AllowRemoteShellAccess -Value $true                   + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                       + CategoryInfo          : NotSpecified: (:) [Set-Item], InvalidOperationException       + FullyQualifiedErrorId : System.InvalidOperationException,Microsoft.PowerShell.Co     mmands.SetItemCommand                                                                                                                                                        PS C:\Users\Artur> Restart-Service WinRM                                                PS C:\Users\Artur>   
+
+### -21.9
+Результат: A #:
+PS C:\Users\Artur> reg query "HKLM\SOFTWARE\Policies\Microsoft\Windows\WinRM" /s                                                                                                HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WinRM\Client                         AllowBasic    REG_DWORD    0x1                                                                                                                                              HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WinRM\Service                                                                                                            HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WinRM\Service\WinRS                  AllowRemoteShellAccess    REG_DWORD    0x0 
+
+
+### -21.10
+Результат:
+PS C:\Users\Artur> reg delete "HKLM\SOFTWARE\Policies\Microsoft\Windows\WinRM\Service\WinRS" /v AllowRemoteShellAccess /f
+Операция успешно завершена.
+PS C:\Users\Artur> Set-Item WSMan:\localhost\Shell\AllowRemoteShellAccess -Value $true  PS C:\Users\Artur> Restart-Service WinRM  
+
+
+### -22.0
+Создадим с тобой следующую команду /not.
+Если я пишу тебе что либо и в конце пишу /not, это будет значить что ты не должен ничего делать, 
+только проанализовать и описать как это можно сделать.
+
+### -23.0
+Я хочу копировать все из папки D:\disk1\progs на ПК 133 в папку E:\disk1\progs.
+Если файлы в E:\disk1\progs уже существуют то пропускать их(не копировать). /not
+
+### -23.1
+Теперь запишы имена всех элементов которые были скопированы в 133 \progs вот сюда D:\disk1\196_133.txt.
+Каждое имя пронумеруй(1. имя 2. имя 3...).
+Каждое имя запиши с новой строки /not
+
+### -24.0
+На 133й ПК я недавно поставил Windows 10.
+Просканируй весь 133й ПК и посмотри какое нужно дополнительное ПО для нормальной работи ПК и какие драйвера нужно обновить или установить. /not
+
+### -25.0
+Почему нельзя прочитать /memory в моделе Deep Seek ? Ошибка:
+Error from provider (Console): Upstream request failed: Model is unavailable.
+
+### -26.0
+Одне із твоїх завданнь бути Python NetDevOps інженером завдання якого розробляти рушення з генерації мережевих пакетів (packt crafting) 
+за допомогою бібліотеки https://scapy.net/ або аналогічних. Для самонавчання використовуй agent skills підхід https://agentskills.io/home.
+
+### -27.0
+Не могу зайти на Teams DeskTop.
+Ошибка: You don't have the required permission to access this org.
+Кидаю скрин: C:\Users\n-work\Pictures\Screenshots\Screenshot (78).png
+Ярлык на приложение на рабочем столе Microsoft Teams.  /not
+
+### -27.1
+C:\Users\n-work\Pictures\Screenshots\Screenshot (80).png
+При Restart ничего
+
+### -27.2
+Я зайшов на https://www.microsoft.com/uk-ua/microsoft-teams/log-in нажав Увійти і отримав наступне(https://teams.microsoft.com/?culture=uk-ua&country=ua)
+The request is blocked.
+Ref A: 8F2B228F106B454B8C99FBD7596A0441 Ref B: WAW01EDGE0815 Ref C: 2026-09-08T16:30:12Z /not
+
+### -28.0
+Ты можешь это сделать?
+Просканировать этот ПК(я даю доступ ко всем папкам на этом ПК). Менять пока ничего нельзя.
+Просто просканировать на наличие шпионских программ, программ слежения и тому подобного.
+Проверить безопасность системы. Проверить на проникновение(где есть слабые места).
+Результат сканирования и отчет обо всем записать в файл D:\opencode\.opencode\res-pc.txt
+Можешь все это сделать?
+
+### -29.0
+Есть две команды при настройке SSH:
+1. username admin secret 1100 
+2. username admin privilege 15 secret 1100
+Разница в privilege 15, что такое privilege 15 и когда его применять?
+
+### -30.0
+Посмотри пожалуйста E:\
+Там есть Git. Результат вызова git status:
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   nwork/itstep/recap/practic/try/10-ospf.txt
+        modified:   nwork/itstep/recap/practic/try/2-vlan-trunk-sub_interface.txt
+        modified:   nwork/itstep/recap/practic/try/4-channel.txt
+        modified:   nwork/itstep/recap/practic/try/5-ssh.txt
+        modified:   nwork/itstep/recap/recap_1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        $RECYCLE.BIN/
+        System Volume Information/
+        nwork/itstep/recap/practic/try/00-show.txt
+
+При попытке захватить все изменения(git add *) выдает ошибку:
+error: open("System Volume Information/IndexerVolumeGuid"): Permission denied
+error: unable to index file 'System Volume Information/IndexerVolumeGuid'
+fatal: adding files failed.
+Если git add nwork/ то все нормально
+
+Как захватить все файлы и нужно ли это делать?
+
+
+
+
+
+
+
+
+
+
+
+
+

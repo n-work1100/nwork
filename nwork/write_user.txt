@@ -1,0 +1,74 @@
+# write_user.txt
+
+### -1.0
+Решение задачи -2.1 (SSH до S4):
+1) Management IP на S4 в VLAN 99:
+   S4(config)# vlan 99
+   S4(config-vlan)# name Admin
+   S4(config-vlan)# exit
+   S4(config)# interface vlan 99
+   S4(config-if)# ip address 99.99.99.2 255.255.255.0
+   S4(config-if)# no shutdown
+   S4(config-if)# exit
+   S4(config)# ip default-gateway 99.99.99.254
+2) SSH на S4:
+   S4(config)# ip domain-name admin.local
+   S4(config)# crypto key generate rsa (1024)
+   S4(config)# username admin privilege 15 secret 1100
+   S4(config)# ip ssh version 2
+   S4(config)# line vty 0 4
+   S4(config-line)# transport input ssh
+   S4(config-line)# login local
+   S4(config)# end
+   S4# copy running-config startup-config
+3) Подключение с PC7: ssh -l admin 99.99.99.2 (пароль 1100)
+4) Пинг только PC4-PC6, PC8: шлюзы ПК 30.30.30.254 / 40.40.40.254 / 99.99.99.254 / 50.50.50.254 + 
+ACL extended на R2 (ip access-group 100 in на Gi2/0.99), разрешающий ICMP только на 30.30.30.1, 30.30.30.2, 40.40.40.1, 50.50.50.1.
+
+R2(config)# access-list 100 permit icmp host 99.99.99.1 host 30.30.30.1 echo
+R2(config)# access-list 100 permit icmp host 99.99.99.1 host 30.30.30.2 echo
+R2(config)# access-list 100 permit icmp host 99.99.99.1 host 40.40.40.1 echo
+R2(config)# access-list 100 permit icmp host 99.99.99.1 host 50.50.50.1 echo
+R2(config)# access-list 100 deny ip any any log
+
+R2(config)# interface GigabitEthernet2/0.99
+R2(config-if)# ip access-group 100 in
+
+### -2.0
+Вариант 3 — координаты телефона в Telegram-бот (учёба IT-безопасность):
+1) Создать бота: Telegram -> @BotFather -> /newbot -> имя и username (оканчивается на bot) -> получить токен (вида 123456789:AAE...). Написать боту любое сообщение.
+2) Узнать chat_id с ПК: https://api.telegram.org/bot<ТОКЕН>/getUpdates -> в JSON найти "chat":{"id":...}.
+3) Телефон (Android): установить Termux + Termux:API (Google Play).
+   В Termux: pkg update && pkg upgrade; pkg install python termux-api; pip install requests.
+   Разрешение геолокации: Настройки -> Приложения -> Termux -> Разрешения -> Местоположение.
+   Тест GPS: termux-location -p gps (вернёт "latitude"/"longitude").
+4) Скрипт send_loc.py:
+   import json, subprocess, requests
+   TOKEN = "..."; CHAT_ID = "..."
+   out = subprocess.check_output(["termux-location","-p","gps"]).decode()
+   data = json.loads(out); lat, lon = data["latitude"], data["longitude"]
+   url = f"https://api.telegram.org/bot{TOKEN}/sendLocation"
+   requests.post(url, data={"chat_id": CHAT_ID, "latitude": lat, "longitude": lon})
+5) Запуск: вручную python send_loc.py; автозапуск — termux-job-scheduler (каждые 5-10 мин).
+6) Просмотр с ПК: web.telegram.org -> чат с ботом -> карта с точкой.
+Важно: токен/chat_id не передавать никому; для защиты телефона использовать штатный Google «Найти устройство».
+
+### -2.1
+Скрипт send_loc.py (Termux, Android):
+import json, subprocess, requests
+TOKEN = "ТВОЙ_ТОКЕН"
+CHAT_ID = "ТВОЙ_CHAT_ID"
+out = subprocess.check_output(["termux-location", "-p", "gps"]).decode()
+data = json.loads(out)
+lat, lon = data["latitude"], data["longitude"]
+url = f"https://api.telegram.org/bot{TOKEN}/sendLocation"
+requests.post(url, data={"chat_id": CHAT_ID, "latitude": lat, "longitude": lon})
+print("Отправлено:", lat, lon)
+
+### -
+
+
+
+
+
+
